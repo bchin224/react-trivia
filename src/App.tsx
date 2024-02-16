@@ -6,10 +6,13 @@ import Questions from './components/Questions';
 
 
 function App() {
-  let number = 1;
+  // let number = 1;
   let [start, setStart] = useState(0)
+  let [number, setNumber] = useState(0)
 
   const handleStartClick  = () => setStart(1);
+  const handlePrevClick  = () => setNumber(number-1);
+  const handleNextClick  = () => setNumber(number+1);
 
   return (
     <>
@@ -21,13 +24,9 @@ function App() {
       : 
         <>
           <div className='questions'>
+            <button className='prevButton' onClick={handlePrevClick}>Prev</button>
             <Questions questionNum = {number}></Questions>
-          </div>
-          {/* // <div>
-          //   <Card></Card>
-          // </div> */}
-          <div>
-            <button>Prev</button><button>Next</button>
+            <button className='nextButton' onClick={handleNextClick}>Next</button>
           </div>
         </>
       }
