@@ -1,25 +1,40 @@
 import { useState } from 'react'
 import './App.css'
-import Button from './components/Button';
 import Questions from './components/Questions';
+// import Button from './components/Button';
+// import Card from './components/Card';
 
 
 function App() {
+  let number = 1;
+  let [start, setStart] = useState(0)
 
+  const handleStartClick  = () => setStart(1);
 
   return (
     <>
       <h1>Ultimate Foodie Trivia!</h1>
-      <div className="card">
-          <Button color='primary' onClick={() => console.log('Clicked')}>
+      { start === 0 ? 
+          <button className='startButton' color='primary' onClick={handleStartClick}>
             Start
-          </Button>
-      </div>
-      <div>
-        <Questions></Questions>
-      </div>
+          </button>
+      : 
+        <>
+          <div className='questions'>
+            <Questions questionNum = {number}></Questions>
+          </div>
+          {/* // <div>
+          //   <Card></Card>
+          // </div> */}
+          <div>
+            <button>Prev</button><button>Next</button>
+          </div>
+        </>
+      }
 
 
+
+      
     </>
   )
 }

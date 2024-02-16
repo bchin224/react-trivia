@@ -1,8 +1,10 @@
+// import Button from './Button';
 import Card from './Card';
 
 interface Props {
-    questionNum: string;
+    questionNum: number;
 }
+
 
 const Questions = ({ questionNum }: Props) => {
 
@@ -45,17 +47,14 @@ const Questions = ({ questionNum }: Props) => {
 		},
 	];
 
-
   return (
     <>
-        <div>{questions.length}</div>
-        <div>{questions[0].questionText}</div>
 		<Card 
-			questionText={questions[0].questionText}
-			answer1={questions[0].answers[0].answerText}
-			answer2={questions[0].answers[1].answerText}
-			answer3={questions[0].answers[2].answerText}
-			answer4={questions[0].answers[3].answerText}
+			questionText={questions[questionNum].questionText}
+			answer1={questions[questionNum].answers[0].answerText}
+			answer2={questions[questionNum].answers[1].answerText}
+			answer3={questions[questionNum].answers[2].answerText}
+			answer4={questions[questionNum].answers[3].answerText}
 			></Card>
     </>
   )
