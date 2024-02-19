@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Button from './Button';
-// import Questions from './Questions';
 
 interface Props {
     questionText: string;
@@ -25,12 +24,11 @@ const Card = ({ questionText, answer1, answer2, answer3, answer4, answer1_val, a
       }>({});
 
       useEffect(() => {
-        // Reset button colors to 'primary' with every new question
         setButtonClicked({});
       }, [number]); 
 
     const handleAnswerClick = (value:boolean, answer_num:string) => {
-        const correct = value['answer'+answer_num+'_val'];
+        const correct = value;
 
         setButtonClicked((prev) => ({ ...prev, [answer_num]: true }));
 
@@ -48,16 +46,16 @@ const Card = ({ questionText, answer1, answer2, answer3, answer4, answer1_val, a
             <ul className="list-group list-group-flush">
 
                 <li className="list-group-item">
-                    <Button color={buttonClicked['1'] ? (answer1_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick({answer1_val},'1')}> {answer1}</Button>
+                    <Button children={answer1} color={buttonClicked['1'] ? (answer1_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick(answer1_val,'1')}></Button>
                     </li>
                 <li className="list-group-item">
-                    <Button color={buttonClicked['2'] ? (answer2_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick({answer2_val},'2')}>{answer2}</Button>
+                    <Button children={answer2} color={buttonClicked['2'] ? (answer2_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick(answer2_val,'2')}></Button>
                 </li>
                 <li className="list-group-item">
-                    <Button color={buttonClicked['3'] ? (answer3_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick({answer3_val},'3')}>{answer3}</Button>
+                    <Button children={answer3} color={buttonClicked['3'] ? (answer3_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick(answer3_val,'3')}></Button>
                 </li>
                 <li className="list-group-item">
-                    <Button color={buttonClicked['4'] ? (answer4_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick({answer4_val},'4')}>{answer4}</Button>
+                    <Button children={answer4} color={buttonClicked['4'] ? (answer4_val ? 'success' : 'danger') : 'primary'} onClick={() => handleAnswerClick(answer4_val,'4')}></Button>
                 </li>
             </ul>
             <div className='score'>Score: {score}</div>
