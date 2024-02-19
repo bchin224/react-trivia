@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 import Questions from './components/Questions';
-// import Button from './components/Button';
-// import Card from './components/Card';
-
 
 function App() {
   let [start, setStart] = useState(0)
@@ -36,15 +33,12 @@ function App() {
         <>
           <h5 className="card-title">Question #{number+1}</h5>
           <div className='questions'>
-            <button className='prevButton' onClick={handlePrevClick}>Prev</button>
-            <Questions questionNum = {number}></Questions>
-            <button className='nextButton' onClick={handleNextClick}>Next</button>
+            <button className='prevButton' onClick={handlePrevClick}></button>
+            <Questions questionNum = {number} number={number}></Questions>
+            <button className='nextButton' onClick={handleNextClick}></button>
           </div>
         </>
       }
-
-
-
       
     </>
   )

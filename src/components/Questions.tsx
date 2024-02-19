@@ -3,9 +3,10 @@ import Card from './Card';
 
 interface Props {
     questionNum: number;
+	number: number
 }
 
-const Questions = ({ questionNum }: Props) => {
+const Questions = ({ questionNum, number }: Props) => {
 
     const questions = [
 		{
@@ -211,6 +212,7 @@ const Questions = ({ questionNum }: Props) => {
 			answer3_val={questions[questionNum].answers[2].isCorrect}
 			answer4={questions[questionNum].answers[3].answerText}
 			answer4_val={questions[questionNum].answers[3].isCorrect}
+			number = {number}
 			></Card>
     </>
   )

@@ -9,3 +9,47 @@
 	display: flex;
 	justify-content: center;
 }
+
+body {
+	background: url("./assets/pexels-ella-olsson-1640773.jpg");
+	background-size: cover;
+}
+
+h1,
+.card-title {
+	background-color: white;
+	padding: 10px;
+	margin-bottom: 0px !important;
+}
+
+.questions {
+	margin-top: 20px;
+}
+
+.prevButton {
+	width: 15;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 30px solid #55d524;
+	border-left: 0;
+	background-color: transparent;
+	cursor: pointer;
+	margin: 10em 15px;
+}
+
+.nextButton {
+	width: 15;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 30px solid #55d524;
+	border-right: 0;
+	background-color: transparent;
+	cursor: pointer;
+	margin: 10em 15px;
+}
+
+.score {
+	padding: 10px;
+}
